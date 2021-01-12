@@ -10,7 +10,7 @@ A file created with this tool will display as a regular image with
 <img src="hackedimage.jpg">
 ```
 
-Many browsers, without nosniff set in the response headers, will execute it as JavaScript with
+Many browsers, without `nosniff` set in the response headers, will execute it as JavaScript with
 
 ```html
 <script charset="ISO-8859-1" src="hackedimage.jpg"></script> 
