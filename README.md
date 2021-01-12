@@ -2,7 +2,7 @@
 
 A polyglot file is one that looks and behaves like two different file types.  This tool builds one that is simultaneously a JPEG image and a JavaScript script.
 
-Such files can introduce vulnerabilities in web services as many browsers, by default, examine the contents of a downloaded resource and override the `Content-Type` if it disagrees with what the browser believes the file to be.
+Such files can introduce vulnerabilities in web services as many browsers, by default, examine the contents of a downloaded resource and override the `Content-Type` if it disagrees with what the browser believes the file to be.  This is the so-called MIME Confusion Attack.
 
 A file created with this tool will display as a regular image with
 
@@ -16,9 +16,9 @@ Many browsers, without nosniff set in the response headers, will execute it as J
 <script charset="ISO-8859-1" src="hackedimage.jpg"></script> 
 ```
 
-Despite the fact that it is an image, and the server returns it with a `Content-Type` of `image/jpeg`, the browser inspects the file, determines it is JavaScript code which matches what the `<script>` tag expects, and executes it.
+Despite the fact that it is an image, and the server returns it with a `Content-Type` of `image/jpeg`, the browser inspects the file, determines it is JavaScript code, which matches what the `<script>` tag expects, and executes it as JavaScript.
 
-Note that some browsers need the charset set, otherwise they expect UTF-8, which will cause it to break.
+Note that some browsers need the charset set (as above), otherwise they expect UTF-8, which will cause it to break.
 
 ## How it works
 
