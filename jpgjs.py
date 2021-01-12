@@ -29,7 +29,7 @@ def skipheader(image, idx):
 	len1 = image[idx]
 	len2 = image[idx+1]
 	header_len = (len1 << 8) + len2
-	print("Header starting byte", idx, "is len", header_len)
+	print("Skipping header starting byte " + str(idx) + " (" + str(header_len) + " bytes)")
 	if (len(image) - idx < header_len):
 		print("Invalid JPEG image - badly formed header starting at byte " + str(idx) + " - " + args.image)
 		sys.exit(1)
